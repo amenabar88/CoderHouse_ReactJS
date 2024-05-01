@@ -1,13 +1,17 @@
-const NavBar = () => {
-    return(
-        <div className="container-fluid">
-            <div className="row">
-                <div className="col">
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-                </div>
-            </div>
-        </div>
-    )
+const Navbar = () => {
+  return (
+    <nav>
+      <ul>
+        <li><Link to="/">Inicio</Link></li>
+        <li><Link to="/category/1">Categoría 1</Link></li>
+        <li><Link to="/category/2">Categoría 2</Link></li>
+        <li><Link to="/category/3">Categoría 3</Link></li>
+      </ul>
+    </nav>
+  );
 }
 
-export default NavBar
+export default Navbar;
