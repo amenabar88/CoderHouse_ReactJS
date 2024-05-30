@@ -1,0 +1,22 @@
+.item-detail {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.item-image {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

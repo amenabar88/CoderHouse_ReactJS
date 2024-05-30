@@ -1,24 +1,28 @@
-
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import Navbar from './Navbar';
-import Catalogo from './Catalogo';
-import DetalleProducto from './DetalleProducto';
-import ItemListContainer from './ItemListContainer';
+// src/App.jsx
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import Footer from "./components/Footer/Footer";
+import "./App.css";
 
 const App = () => {
   return (
     <Router>
-      <div>
+      <div className="app">
         <Navbar />
-        <Switch>
-          <Route exact path="/" component={ItemListContainer} />
-          <Route path="/category/:id" component={ItemListContainer} />
-          <Route path="/item/:id" component={DetalleProducto} />
-        </Switch>
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<ItemListContainer />} />
+            <Route path="/category/:categoryId" element={<ItemListContainer />} />
+            <Route path="/item/:itemId" element={<ItemDetailContainer />} />
+          </Routes>
+        </main>
+        <Footer />
       </div>
     </Router>
   );
-}
+};
 
 export default App;
